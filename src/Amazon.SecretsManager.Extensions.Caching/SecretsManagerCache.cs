@@ -19,11 +19,12 @@ namespace Amazon.SecretsManager.Extensions.Caching
     using Amazon.Runtime;
     using Amazon.SecretsManager.Model;
     using Microsoft.Extensions.Caching.Memory;
+    
 
     /// <summary>
     /// A class used for clide-side caching of secrets stored in AWS Secrets Manager
     /// </summary>
-    public class SecretsManagerCache : IDisposable
+    public class SecretsManagerCache : ISecretsManagerCache
     {
         private readonly IAmazonSecretsManager secretsManager;
         private readonly SecretCacheConfiguration config;
